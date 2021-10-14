@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="app">
+
+        <ul>
+            <li v-for="(value, key, index) in usuario">
+                <b>({{index}})</b> {{key}} : {{value}}
+            </li>
+        </ul>
+
+        <div v-for="(imagem, index) in imagens" style="text-align: center;">
+            <img :src="imagem.nome" width="200px">
+            <p>
+                <h2 style="color:brown"><strong>({{index}}) - {{imagem.nome}}</strong></h2>
+            </p>
+            <h5 style="color:blue">{{imagem.detalhe}}</h5>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+
+        new Vue({
+
+            el: '#app',
+            data:{
+                textoDigitado: "",
+                imagens: [
+                    {nome: "vue-logo.png", detalhe: "Logo oficial sem detalhes"},
+                    {nome: "vue-logo-2.png", detalhe: "Logo com nome"},
+                    {nome: "vue-logo-3.png", detalhe: "Logo com arte"}
+                ],
+                usuario: {
+                    nome: 'Pedro',
+                    sobrenome: 'Henrique Souza Arcanjo',
+                    telefone: '123456',
+                    email: 'pedro@pedro.com'
+                }
+
+            }
+
+        });
+
+    </script>
+</body>
+</html>

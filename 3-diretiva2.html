@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="app">
+    
+        <div v-if="textoDigitado == 1">
+            <img v-bind:src="srcImg1" v-bind:title="titleImg" width="500px">
+        </div>
+
+        <div v-else-if="textoDigitado == 2">
+            <img v-bind:src="srcImg2" v-bind:title="titleImg" width="500px">
+        </div>
+
+        <div v-else="textoDigitado == 3">
+            <img v-bind:src="srcImg3" v-bind:title="titleImg" width="500px">
+        </div>
+
+        <p v-html="'<strong>Digite números de 1 a 3 pra visualizar as logos do Vue:</strong>'"></p>
+
+        <br/>
+        {{textoDigitado}}
+        <br/>
+        
+        <input type="text" v-model="textoDigitado">
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+
+        new Vue({
+
+            el: '#app',
+            data:{
+                textoDigitado: "",
+                srcImg1: "vue-logo.png",
+                srcImg2: "vue-logo-2.png",
+                srcImg3: "vue-logo-3.png",
+                titleImg: "Logo Vue"
+            }
+
+        });
+
+    </script>
+</body>
+</html>

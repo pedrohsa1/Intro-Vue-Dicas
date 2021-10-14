@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="app">
+        <!--<img src="{{srcImg}}" title="{{titleImg}}"> Está errado fazer desta maneira, pois precisamos fazer um binde-->
+        <!--Maneira correta: -->
+        <img v-bind:src="srcImg" v-bind:title="titleImg">
+        <hr/>
+        <!--Deixando apenas os ":", não é preciso escrever "v-bind", pois o Vue já entende-->
+        <a :href="url"> Link para o Vue</a>
+        <hr/>
+        <p v-text="'Texto qualquer inserindo sem propriedade no data'"></p>
+        <hr/>
+        <p v-text="textPar"></p>
+        <hr/>
+        <p v-html="textParHtml"></p>
+        <hr/>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+
+        new Vue({
+
+            el: '#app',
+            data:{
+                srcImg: "vue-logo.png",
+                titleImg: "Logo Vue",
+                url: "http://vuejs.org",
+                textPar: "teste qualquer",
+                textParHtml: "texto com <h3><strong><i>html</i></strong></h3>"
+            }
+
+        });
+
+    </script>
+</body>
+</html>

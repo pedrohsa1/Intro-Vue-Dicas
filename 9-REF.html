@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <div id="app">
+        <h3>REF</h3>
+        
+        <br/>
+        <button @click="vermelho()">Vermelho</button>
+        <button @click="verde()">Verde</button>
+        <button @click="borda()">borda</button>
+        <button @click="incolor()">Incolor</button>
+
+        <p ref="firstParagraph">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione aperiam aliquid tempore sapiente ducimus qui eum nisi, nesciunt, quam atque culpa. Totam ducimus libero voluptatem deserunt eos accusamus iure aliquam.
+        </p>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+
+        new Vue({
+
+            el: '#app',
+            data:{
+                colors:{
+                    vermelho: true,
+                    verde: false
+                },
+                classParagrafo : "red"
+            },
+            methods:{
+                vermelho(){
+                    this.$refs.firstParagraph.style.background = "red";
+                },
+                verde(){
+                    this.$refs.firstParagraph.style.background = "green";
+                },
+                borda(){
+                    this.$refs.firstParagraph.style.border = "2px solid black";
+                },
+                incolor(){
+                    this.$refs.firstParagraph.style = "";
+                }
+            }
+
+        });
+
+    </script>
+</body>
+</html>

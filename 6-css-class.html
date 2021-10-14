@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .red{background-color: red;}
+        .green{background-color: green;}
+        .blue{background-color: blue;}
+        .yellow{background-color: yellow;}
+    </style>
+
+    <div id="app">
+        <h3>Classe</h3>
+
+        red
+        <input @click="colorirP($event.target.value)" type="radio" name="cor" value= "red" checked>
+        green
+        <input @click="colorirP($event.target.value)" type="radio" name="cor" value= "green">
+        blue
+        <input @click="colorirP($event.target.value)" type="radio" name="cor" value= "blue">
+        yellow
+        <input @click="colorirP($event.target.value)" type="radio" name="cor" value= "yellow">
+
+        <p :class="classParagrafo">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione aperiam aliquid tempore sapiente ducimus qui eum nisi, nesciunt, quam atque culpa. Totam ducimus libero voluptatem deserunt eos accusamus iure aliquam.
+        </p>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+
+        new Vue({
+
+            el: '#app',
+            data:{
+                classParagrafo : "red"
+            },
+            methods:{
+                colorirP(cor){
+                    this.classParagrafo = cor;
+                }
+            }
+
+        });
+
+    </script>
+</body>
+</html>
